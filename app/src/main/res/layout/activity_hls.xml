@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    tools:context="hse.t.alicemaster.HLSActivity">
+    <RelativeLayout
+        android:id="@+id/activity_video_player"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin">
+
+        <com.google.android.exoplayer2.ui.SimpleExoPlayerView
+            android:id="@+id/exoplayer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="100dp"
+            app:resize_mode="fixed_width" />
+
+        <LinearLayout
+            android:id="@+id/above_adult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@+id/exoplayer"
+            android:layout_marginTop="10dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Стоимость: "/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/price"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_below="@+id/above_adult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/above_player"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Возрастные ограничения: "/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/adult"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp"
+            android:padding="8dp"
+            android:background="#fff"
+            android:layout_below="@+id/above_player">
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/loading_shape"
+                android:id="@+id/new_poster"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:orientation="vertical"
+                android:layout_marginLeft="8dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/new_title"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:text="Название фильма"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Рейтинг"
+                    android:textSize="14sp"
+                    android:id="@+id/new_rating"
+                    android:layout_marginTop="5dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Описание"
+                    android:textStyle="italic"
+                    android:textSize="12sp"
+                    android:layout_marginTop="5dp"
+                    android:id="@+id/new_description"/>
+            </LinearLayout>
+
+            <!--<View-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="1dp"-->
+                <!--android:layout_marginLeft="10dp"-->
+                <!--android:layout_marginRight="10dp"-->
+                <!--android:background="#5533C7"/>-->
+        </LinearLayout>
+
+    </RelativeLayout>
+</layout>
